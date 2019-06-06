@@ -37,9 +37,11 @@ public class Word {
 	public bool WordTyped ()
 	{
 		bool wordTyped = (typeIndex >= romaji.Length); // Checks if the whole word has been typed
-		if (wordTyped) 
-		{
+		if (wordTyped) {
 			display.RemoveWord (); // Remove the whole object on screen
+		} else
+		{
+			display.Highlighter();
 		}
 		return wordTyped;
 	}
