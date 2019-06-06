@@ -10,8 +10,7 @@ public class WordDisplay : MonoBehaviour {
 
 	public void SetWord (string word)
 	{
-		// text.text = word;
-		text.text = WordGenerator.GetWord_Hiragana ();
+		text.text = word;
 	}
 
 	public void Highlighter ()

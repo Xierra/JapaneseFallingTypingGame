@@ -15,8 +15,7 @@ public class WordManager : MonoBehaviour {
 
 	public void AddWord ()
 	{
-		// Word question = new Word (WordGenerator.GetWord_Hiragana(), wordSpawner.SpawnWord ()); // Feed a random word, and then display that word.
-		Word word = new Word (WordGenerator.GetWord_Romaji(), wordSpawner.SpawnWord());
+		Word word = new Word (wordSpawner.SpawnWord());
 
 		words.Add (word);
 	}

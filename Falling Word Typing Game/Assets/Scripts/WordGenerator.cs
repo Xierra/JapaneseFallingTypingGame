@@ -5,7 +5,6 @@ using UnityEngine;
 public class WordGenerator : MonoBehaviour {
 
 
-
 	/* Goal: 
 		Generate a set of Hiragana & Katakana Text as the value which appears on screen, 
 		then type the answer in romaji.
@@ -63,44 +62,31 @@ public class WordGenerator : MonoBehaviour {
 		"ba", "bi", "bu", "be", "bo",
 		"pa", "pi", "pu", "pe", "po" };
 
-	public static int GetIndex ()
+	public static int GetIndex()
 	{
 		int index = Random.Range (0, wordList_Romaji.Length - 1);	// Get Random number which has the same index for Hiragana, Katakana, and Romaji arrays
 
-		Debug.Log ("Index #" + index + ": " + wordList_Hiragana[index] + " " + wordList_Katakana[index] + " " + wordList_Romaji[index]); // Debug Log
-
-		return index; // Returns the result of the random as a guidance.
+		Debug.Log ("Index #" + index + ": " + wordList_Hiragana[index] + " " + wordList_Katakana[index] + " " + wordList_Romaji[index] ); // Debug Log
+		return index;
 	}
-	
-
+}
+	/*
 	public static string GetWord_Hiragana ()	// A function to return the result of GetIndex as Hiragana word to be used on WordManager and in turn, displays that Hiragana.
 	{
-		int index = GetIndex ();
-
 		string getWord_Hiragana = wordList_Hiragana [index];
-
-		// Debug.Log ("Hiragana is: " + getWord_Hiragana);
 		return getWord_Hiragana;
 	}
-
-	// Problem: It doesn't read anything below. How can I fix this?
-
-	public static string GetWord_Katakana ()	// A function to return the result of GetIndex as Katakana word to be used on WordManager and in turn, displays that Katakana.
+			
+	public static string GetWord_Katakana ()	
 	{
-
-		int index = GetIndex ();
 		string getWord_Katakana = wordList_Katakana [index];
-
-		// Debug.Log ("Katakana is: " + getWord_Katakana);
 		return getWord_Katakana;
 	}
 
 	public static string GetWord_Romaji ()	// A function to return the result of GetIndex as Romaji word. This is used as the typeletter.
 	{
-		int index = GetIndex ();
 		string getWord_Romaji = wordList_Romaji [index];
-
-		// Debug.Log ("Answer is:" + getWord_Romaji);
 		return getWord_Romaji;
 	}
 }
+*/
