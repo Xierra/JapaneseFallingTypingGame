@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class WordDisplay : MonoBehaviour {
 
 	public Text text;
-	public float fallSpeed = 1f;
+	public static float fallSpeed = 1f;
 
 	public void SetWord (string word) // Displays the word. What displays is based on Word constructor.
 	{
@@ -22,6 +22,7 @@ public class WordDisplay : MonoBehaviour {
 	{
 		text.color = Color.green;
 		StartCoroutine(FadeText(1f, text));
+		GetComponent<BoxCollider2D> ().enabled = false;
 	}
 
 	public IEnumerator FadeText(float t, Text i)
@@ -38,6 +39,11 @@ public class WordDisplay : MonoBehaviour {
 	public void Update()
 	{
 		transform.Translate (0f, -fallSpeed * Time.deltaTime, 0f);
+	}
+
+	public void AdjustFallSpeed(float newFallSpeed) // To be used on a slider in Main Menu.
+	{
+		fallSpeed = newFallSpeed;
 	}
 }
 
