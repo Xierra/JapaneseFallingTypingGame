@@ -47,5 +47,12 @@ public class WordManager : MonoBehaviour {
 			hasActiveWord = false;			// Set as non-active
 			words.Remove(activeWord);		// Remove the object
 		}
+
+		/*
+		else if (activeWord.TypeLetter() == null) {			// Attempt to detect if typeletter is still active
+			hasActiveWord = false;
+			words.Remove (activeWord);
+		}
+		*/
 	}
 }

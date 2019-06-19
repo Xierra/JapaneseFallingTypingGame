@@ -5,23 +5,87 @@ using UnityEngine;
 [System.Serializable]
 public class Word {
 
+	public string word;
+
+	public int wordDisplaySelect;
+	public string wordDisplay;
+	public int romajiSelect;
 	public string romaji;
-	public string hiragana;
 	private int typeIndex; // Checks for current letter
 
 	private int wordIndex; // Index of word used from WordGenerator
 
 	WordDisplay display;
 
-	public Word (WordDisplay _display)  // Displays the word as Hiragana / Katakana
+/*	public void WordSelect() // Selects the word and romaji from the LevelSelector.
 	{
-		wordIndex = WordGenerator.GetIndex ();
-		romaji = WordGenerator.wordList_Romaji[wordIndex];
+		romajiSelect = LevelSelector.getWordList_Romaji_Select ();
+		wordDisplaySelect = LevelSelector.getWordList_Select ();
 
-		hiragana = WordGenerator.wordList_Hiragana[wordIndex];
+		switch (wordDisplaySelect) {
+		case 1: 	// Hiragana
+			wordDisplay = WordGenerator.wordList_Hiragana [wordIndex];
+			break;
+		
+		case 2:		// Katakana
+			wordDisplay = WordGenerator.wordList_Katakana [wordIndex];
+			break;
+		
+		case 3:		// Kanji
+			wordDisplay = WordGenerator.wordList_Kanji [wordIndex];
+			break;
+		}
+
+		switch (romajiSelect) {
+		case 1: 	// Romaji list from Kana
+			romaji = WordGenerator.wordList_Romaji [wordIndex];
+			break;
+
+		case 2:		// Romaji list from Kanji
+			romaji = WordGenerator.wordList_Romaji_Kanji [wordIndex];
+			break;
+		}
+
+	}
+*/
+	public Word (WordDisplay _display)  // Displays the word
+	{
+		
+
+
+		wordIndex = WordGenerator.GetIndex ();
+
+		romajiSelect = LevelSelector.getWordList_Romaji_Select ();
+		wordDisplaySelect = LevelSelector.getWordList_Select ();
+
+		switch (wordDisplaySelect) {
+		case 1: 	// Hiragana
+			wordDisplay = WordGenerator.wordList_Hiragana [wordIndex];
+			break;
+
+		case 2:		// Katakana
+			wordDisplay = WordGenerator.wordList_Katakana [wordIndex];
+			break;
+
+		case 3:		// Kanji
+			wordDisplay = WordGenerator.wordList_Kanji [wordIndex];
+			break;
+		}
+
+		switch (romajiSelect) {
+		case 1: 	// Romaji list from Kana
+			romaji = WordGenerator.wordList_Romaji [wordIndex];
+			break;
+
+		case 2:		// Romaji list from Kanji
+			romaji = WordGenerator.wordList_Romaji_Kanji [wordIndex];
+			break;
+		}
 
 		display = _display;
-		display.SetWord (hiragana);
+
+
+		display.SetWord (wordDisplay);
 	}
 
 	public char GetNextLetter ()

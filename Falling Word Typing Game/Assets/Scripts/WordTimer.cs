@@ -6,16 +6,17 @@ public class WordTimer : MonoBehaviour {
 
 	public WordManager wordManager;
 
-	public  float wordDelay = 1.5f;
+	public float wordDelay = 1f;
+	public float delayMultiplier = LevelSelector.getSpawnFrequency();
 	public float nextWordTime = 0f;
 
 	private void Update()
 	{
 		if (Time.time >= nextWordTime) {
-
+			Debug.Log (nextWordTime);
 			wordManager.AddWord ();
-			nextWordTime = Time.time + wordDelay;
-			wordDelay *= .99f;
+			nextWordTime = Time.time + wordDelay * delayMultiplier;
+		//	wordDelay *= .99f;
 		}
 	}
 
